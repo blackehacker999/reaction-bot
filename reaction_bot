@@ -3,7 +3,12 @@ import time
 import os
 
 # =================== CONFIGURATION ===================
-BOT_TOKEN = "8231103596:AAEPeYdyP7PDyY7n3uQ36dyEjAqdlLbz2ek"  # <-- Apna bot token paste karein
+def read_token_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read().strip()
+
+BOT_TOKEN = read_token_from_file('token.txt')
+bot = telebot.TeleBot(BOT_TOKEN)
 CHAT_ID = "@TestingCyberAmarjit"      # <-- Apna channel username e.g. @CyberAmarjit
 REACTION = "🔥"                         # <-- Emoji jo reaction me dena hai
 
